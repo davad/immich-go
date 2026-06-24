@@ -134,11 +134,7 @@ func (ic *ImmichClient) prepareCallValues(la *assets.Asset, s fs.FileInfo, ext, 
 	callValues["isFavorite"] = myBool(la.Favorite).String()
 	callValues["fileExtension"] = ext
 
-	if ic.serverVersion.Major() >= 3 {
-		callValues["duration"] = "0"
-	} else {
-		callValues["duration"] = formatDuration(0)
-	}
+	callValues["duration"] = "0"
 	callValues["isReadOnly"] = "false"
 	if la.Archived {
 		callValues["visibility"] = "archive"

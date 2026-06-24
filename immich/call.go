@@ -103,13 +103,13 @@ func (sc *serverCall) decodeServerError(resp *http.Response) serverError {
 		}
 	}
 
-	if v := sc.ic.serverVersion; v != nil && v.Major() >= 3 {
-		e := serverErrorV3{CorrelationID: resp.Header.Get("X-Correlation-ID")}
+	if v := sc.ic.serverVersion; v != nil && v.Major() < 3 {
+		var e serverErrorV2
 		json.Unmarshal(body, &e)
 		return e
 	}
 
-	var e serverErrorV2
+	e := serverErrorV3{CorrelationID: resp.Header.Get("X-Correlation-ID")}
 	json.Unmarshal(body, &e)
 	return e
 }
