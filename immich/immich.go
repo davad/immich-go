@@ -28,7 +28,6 @@ type ImmichAssetInterface interface {
 	GetAssetInfo(ctx context.Context, id string) (*Asset, error)
 	DownloadAsset(ctx context.Context, id string) (io.ReadCloser, error)
 	UpdateAsset(ctx context.Context, id string, param UpdAssetField) (*Asset, error)
-	ReplaceAsset(ctx context.Context, ID string, la *assets.Asset) (AssetResponse, error) // Deprecated
 	CopyAsset(ctx context.Context, sourceID string, targetID string) error
 	GetAllAssets(ctx context.Context, fn func(*Asset) error) error
 	AddAssetToAlbum(context.Context, string, []string) ([]UpdateAlbumResult, error)
