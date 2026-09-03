@@ -19,16 +19,16 @@ This guide covers all installation methods for Immich-Go across different platfo
 ## API Permissions
 `
 Create an` immich API key for each user account you plan to use with `Immich-Go` with the following permissions:
+- `album.create`
+- `album.read`
+- `albumAsset.create`
+- `asset.copy`
+- `asset.delete`
+- `asset.download`
 - `asset.read`
 - `asset.statistics` 
 - `asset.update`
 - `asset.upload`
-- `asset.copy`
-- `asset.delete`
-- `asset.download`
-- `album.create`
-- `album.read`
-- `albumAsset.create`
 - `server.about`
 - `stack.create`
 - `tag.asset`
